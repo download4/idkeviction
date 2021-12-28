@@ -1,9 +1,17 @@
 return {
 
-    GamesWindow = {
+    MainWindow = {
     
-      Title = "Challenges" -- very tempting to put experiences
+      Title = "Eviction Notice"
     
+    },
+    
+    Challenges = {
+     
+        Title = "Challenges"
+        
     }
 
 }
+
+-- ignore ugly formatting :(
