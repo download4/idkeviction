@@ -10,7 +10,17 @@ return {
      
         Title = "Challenges"
         
-    }
+    },
+
+    AFK = "Auto Solver",
+
+    ChallengeButtons = {
+
+
+
+    },
+
+    LocalStuff = {Title = "LocalPlayer"}
 
 }
 
