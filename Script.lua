@@ -35,6 +35,16 @@ ChallengesFolder:AddButton("Straight Shooters", function()
     end
 end)
 
+ChallengesFolder:AddButton("Tile Trekkers", function()
+    for i = 1, 120 * 2 do
+        for _,v in ipairs(workspace.House['Tile Trekkers'].Tiles:GetChildren()) do
+            firetouchinterest(v, game.Players.LocalPlayer.PrimaryPart, 0)
+            firetouchinterest(v, game.Players.LocalPlayer.PrimaryPart, 1)
+        end
+        task.wait(.5)
+    end
+end)
+
 MiscFolder:AddButton("Crash Challenge", function()
     local ChosenEvent = game.ReplicatedStorage.Comps:GetChildren()[math.random(1,#game.ReplicatedStorage.Comps:GetChildren())]
     for i = 1, 200 do
