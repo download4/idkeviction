@@ -1,0 +1,9 @@
+return {
+
+    GamesWindow = {
+    
+      Title = "Games"
+    
+    }
+
+}
