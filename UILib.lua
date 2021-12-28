@@ -1,12 +1,6 @@
---[[
-	ui-engine-v2
-	version 1.3a
-	by Singularity (V3rm @ King Singularity) (Discord @ Singularity#5490)
---]]
-
 local ui_options = {
-	main_color = Color3.fromRGB(41, 74, 122),
-	min_size = Vector2.new(400, 300),
+	main_color = Color3.fromRGB(224, 31, 141),
+	min_size = Vector2.new(400, 311),
 	toggle_key = Enum.KeyCode.RightShift,
 	can_resize = true,
 }
@@ -88,8 +82,12 @@ local Title_4 = Instance.new("TextLabel")
 local Input = Instance.new("TextButton")
 local Input_Roundify_4px = Instance.new("ImageLabel")
 local Windows = Instance.new("Frame")
+local uud = game:GetService("HttpService"):GenerateGUID(false)
 
-imgui.Name = "imgui"
+imgui.Name = uud
+if syn then
+syn.protect_gui(imgui)
+end
 imgui.Parent = game:GetService("CoreGui")
 
 Prefabs.Name = "Prefabs"
@@ -147,7 +145,7 @@ Toggle.Position = UDim2.new(0, 5, 0, -2)
 Toggle.Rotation = 90
 Toggle.Size = UDim2.new(0, 20, 0, 20)
 Toggle.ZIndex = 2
-Toggle.Image = "https://www.roblox.com/Thumbs/Asset.ashx?width=420&height=420&assetId=4731371541"
+Toggle.Image = ""
 
 Base.Name = "Base"
 Base.Parent = Bar
@@ -352,7 +350,7 @@ Indicator_2.Position = UDim2.new(0.899999976, -10, 0.100000001, 0)
 Indicator_2.Rotation = -90
 Indicator_2.Size = UDim2.new(0, 15, 0, 15)
 Indicator_2.ZIndex = 2
-Indicator_2.Image = "https://www.roblox.com/Thumbs/Asset.ashx?width=420&height=420&assetId=4744658743"
+Indicator_2.Image = ""
 
 Box.Name = "Box"
 Box.Parent = Dropdown
@@ -452,7 +450,7 @@ Toggle_2.BackgroundColor3 = Color3.new(1, 1, 1)
 Toggle_2.BackgroundTransparency = 1
 Toggle_2.Position = UDim2.new(0, 5, 0, 0)
 Toggle_2.Size = UDim2.new(0, 20, 0, 20)
-Toggle_2.Image = "https://www.roblox.com/Thumbs/Asset.ashx?width=420&height=420&assetId=4731371541"
+Toggle_2.Image = ""
 
 Objects_2.Name = "Objects"
 Objects_2.Parent = Folder
@@ -923,7 +921,7 @@ local function ripple(button, x, y)
 end
 
 local windows = 0
-local library = {}
+library = {}
 
 local function format_windows()
 	local ull = Prefabs:FindFirstChild("UIListLayout"):Clone()
@@ -1230,7 +1228,7 @@ function library:AddWindow(title, options)
 						callback = typeof(callback) == "function" and callback or function()end
 						textbox_options = typeof(textbox_options) == "table" and textbox_options or {["clear"] = true}
 						textbox_options = {
-							["clear"] = ((textbox_options.clear) == true)
+							["clear"] = ((textbox_options.clear) == false)
 						}
 
 						local textbox = Prefabs:FindFirstChild("TextBox"):Clone()
@@ -1926,6 +1924,7 @@ function library:AddWindow(title, options)
 
 						return ha_data, ha
 					end
+					
 
 					function tab_data:AddFolder(folder_name) -- [Folder]
 						local folder_data = {}
