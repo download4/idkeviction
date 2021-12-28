@@ -10,8 +10,10 @@ local UiLibrary = loadstring(getFile("UILib.lua"))()
 local MainWindow = UiLibrary:AddWindow("Eviction Notice")
 local ChallengesFolder = MainWindow:AddTab("Challenges")
 
+ChallengesFolder:Show()
+
 local TeleportSpeed = 32
-local SpeedSlider = ChallengesFolder:AddSlider("TeleportSpeed", function(num)
+local SpeedSlider = ChallengesFolder:AddSlider("Teleport Speed", function(num)
     TeleportSpeed = num
 end, {min = 16, max = 100})
 
