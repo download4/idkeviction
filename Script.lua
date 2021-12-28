@@ -1,3 +1,8 @@
+if game.PlaceId ~= 8388707335 then
+    game.ReplicatedStorage.Hub.Join:InvokeSeerver()
+    return
+end
+
 local githubBranch = "beta"
 local githubUrl = "https://raw.githubusercontent.com/download4/idkeviction/" .. githubBranch .. "/"
 
