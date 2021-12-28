@@ -1,5 +1,5 @@
 local githubBranch = "beta"
-local githubUrl = "https://raw.githubusercontent.com/download4/idekeviction/" .. githubBranch .. "/"
+local githubUrl = "https://raw.githubusercontent.com/download4/idkeviction/" .. githubBranch .. "/"
 
 function getFile(fileName)
     return game:HttpGet(githubUrl .. fileName)
@@ -7,8 +7,5 @@ end
 
 local UiLibrary = loadstring(getFile("UILib.lua"))()
 
-print("Got UILib")
-
 local MainWindow = UiLibrary:CreateWindow("Eviction Notice")
-
 local ChallengesFolder = MainWindow:CreateFolder("Challenges")
