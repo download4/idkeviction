@@ -1,16 +1,11 @@
-local GitHubUrl = "https://raw.githubusercontent.com/download4/idkeviction"
-local Branch = "beta" -- switch to main when not in beta
+local githubBranch = "beta"
+local githubUrl = "https://raw.githubusercontent.com/download4/idekeviction/" .. githubBranch .. "/"
 
-local UILib = loadstring(game:HttpGet(("%s/%s/UILib.lua"):format(GitHubUrl, Branch)))()
-local Configuration = loadstring(game:HttpGet(("%s/%s/Configuration.lua"):format(GitHubUrl, Branch)))()
-
-local LocalPlayerWindow = UILib:AddWindow(Configuration.LocalStuff.Title)
-local MainWindow = UILib:AddWindow(Configuration.MainWindow.Title)
-local Challenges = MainWindow:AddTab(Configuration.Challenges.Title)
-
-Challenges:Show()
-Challenges:AddLabel(Configuration.AFK)
-
-for _, ChallengeName in ipairs(Configuration.ChallengeButtons) do
-
+function getFile(fileName)
+    return game:HttpGet(githubUrl .. fileName)
 end
+
+local UiLibrary = loadstring(getFile("UILib.lua"))()
+local MainWindow = UiLibrary:CreateWindow("Eviction Notice")
+
+local ChallengesFolder = MainWindow:CreateFolder("Challenges")
