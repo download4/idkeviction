@@ -6,6 +6,9 @@ function getFile(fileName)
 end
 
 local UiLibrary = loadstring(getFile("UILib.lua"))()
+
+print("Got UILib")
+
 local MainWindow = UiLibrary:CreateWindow("Eviction Notice")
 
 local ChallengesFolder = MainWindow:CreateFolder("Challenges")
