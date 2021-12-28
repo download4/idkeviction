@@ -25,6 +25,16 @@ ChallengesFolder:AddButton("Stratosfear", function()
     workspace.House.Stratosfear.Kill.TouchInterest:Destroy() -- remove the touch interest
 end)
 
+ChallengesFolder:AddButton("Straight Shooters", function()
+    for i = 1, 3 do
+        for _, plr in ipairs(game.Players:GetPlayers()) do
+            if plr ~= game.Players.LocalPlayer and plr.Character and plr.Character:FindFirstChild("Head") then
+                game.ReplicatedStorage.Comps.Health:FireServer(plr.Character.Health) -- nice job eviction notice!
+            end
+        end
+    end
+end)
+
 MiscFolder:AddButton("Crash Challenge", function()
     local ChosenEvent = game.ReplicatedStorage.Comps:GetChildren()[math.random(1,#game.ReplicatedStorage.Comps:GetChildren())]
     for i = 1, 200 do
