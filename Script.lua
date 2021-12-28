@@ -7,5 +7,7 @@ end
 
 local UiLibrary = loadstring(getFile("UILib.lua"))()
 
+print(UiLibrary)
+
 local MainWindow = UiLibrary:AddWindow("Eviction Notice")
 local ChallengesFolder = MainWindow:AddTab("Challenges")
