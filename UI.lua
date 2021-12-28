@@ -5,4 +5,4 @@ local UILib = loadstring(game:HttpGet(("%s/%s/UILib.lua"):format(GitHubUrl, Bran
 local Configuration = loadstring(game:HttpGet(("%s/%s/Configuration.lua"):format(GitHubUrl, Branch)))()
 
 local MainWindow = UILib:AddWindow(Configuration.MainWindow.Title)
-local Challenges = GamesWindow:AddTab(Configuration.Challenges.Title)
+local Challenges = MainWindow:AddTab(Configuration.Challenges.Title)
