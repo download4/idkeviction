@@ -2,7 +2,7 @@ return {
 
     GamesWindow = {
     
-      Title = "Games"
+      Title = "Challenges" -- very tempting to not put experiences
     
     }
 
