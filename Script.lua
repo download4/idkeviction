@@ -13,13 +13,6 @@ local MiscFolder = MainWindow:AddTab("Misc")
 
 ChallengesFolder:Show()
 
-local TeleportSpeed = 32
-local SpeedSlider = MiscFolder:AddSlider("Teleport Speed", function(num)
-    TeleportSpeed = num
-end, {min = 32, max = 100})
-
-SpeedSlider:Set(32)
-
 ChallengesFolder:AddLabel("Challenge List")
 ChallengesFolder:AddButton("Stratosfear", function()
     workspace.House.Stratosfear.Kill.TouchInterest:Destroy() -- remove the touch interest
@@ -42,6 +35,32 @@ ChallengesFolder:AddButton("Tile Trekkers", function()
             firetouchinterest(v, game.Players.LocalPlayer.PrimaryPart, 1)
         end
         task.wait(.5)
+    end
+end)
+
+ChallengesFolder:AddButton("Watch Your Step", function()
+
+    local ops = {}
+    local current = workspace.House["Watch Your Step"].Platforms:GetChildren()[math.random(1, #workspace.House["Watch Your Step"].Platforms:GetChildren())]
+
+    local function getRandom()
+        for _,v in ipairs(workspace.House["Watch Your Step"].Platforms:GetChildren()) do
+            if v ~= current and v.Position == ops[v] then
+                return v
+            end
+        end
+    end
+
+    game.Players.LocalPlayer:MoveTo(current.Position)
+    for _,v in ipairs(workspace.House["Watch Your Step"].Platforms:GetChildren()) do
+        local originalPosition = v.Position
+        ops[v] = originalPosition
+        v.Changed:Connect(function()
+            if v.Position ~= originalPosition and current == v then
+                current = getRandom()
+                game.Players.LocalPlayer.Character:MoveTo(current.Position)
+            end
+        end)
     end
 end)
 
