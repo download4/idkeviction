@@ -13,6 +13,6 @@ local ChallengesFolder = MainWindow:AddTab("Challenges")
 local TeleportSpeed = 32
 local SpeedSlider = ChallengesFolder:AddSlider("TeleportSpeed", function(num)
     TeleportSpeed = num
-end, {min = 16, max = 100, readonly = false})
+end, {min = 16, max = 100})
 
 SpeedSlider:Set(32)
