@@ -89,7 +89,7 @@ MiscFolder:AddButton("Random Winner", function()
     end
 end)
 
-MiscFolder:AddButton("Memorabilia", function()
+ChallengesFolder:AddButton("Memorabilia", function()
 
     local NewTab = MainWindow:AddTab("temporary")
     NewTab:Show()
