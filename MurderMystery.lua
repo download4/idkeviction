@@ -14,20 +14,6 @@ local MiscFolder = MainWindow:AddTab("Misc")
 local MurderLabel = MainFolder:AddLabel("Murderer: idk")
 local SherrifLabel = MainFolder:AddLabel("Sherrif: idk")
 
-local mParent = MainFolder:AddHorizontalAlignment()
-local sParent = MainFolder:AddHorizontalAlignment()
-
-local button = mParent:AddButton("e")
-mParent = button.Parent
-button:Destroy()
-
-button = sParent:AddButton("e")
-sParent = button.Parent
-button:Destroy()
-
-MurderLabel.Parent = mParent
-SherrifLabel.Parent = sParent
-
 function findM()
 
     local m = nil
