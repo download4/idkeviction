@@ -51,7 +51,7 @@ ChallengesFolder:AddButton("Watch Your Step", function()
         end
     end
 
-    game.Players.LocalPlayer:MoveTo(current.Position)
+    game.Players.LocalPlayer.Character:MoveTo(current.Position)
     for _,v in ipairs(workspace.House["Watch Your Step"].Platforms:GetChildren()) do
         local originalPosition = v.Position
         ops[v] = originalPosition
