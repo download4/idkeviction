@@ -38,6 +38,34 @@ ChallengesFolder:AddButton("Tile Trekkers", function()
     end
 end)
 
+ChallengesFolder:AddButton("Fire Escape", function()
+
+    -- TODO: make it care about it being yours or not
+
+    for i = 1, 80 do
+
+        local water = nil
+
+        for _,v in ipairs(workspace:GetDescendants()) do
+            if v.Name == "Water" then
+                water = v
+                break
+            end
+        end
+
+        for _,v in ipairs(workspace:GetDescendants()) do
+            if v.Name == "Extinguish" then
+                game.Players.LocalPlayer.Character:MoveTo(water.Position)
+                task.wait(.5)
+                game.Players.LocalPlayer.Character:MoveTo(v.Position)
+                task.wait(.5)
+            end
+        end
+
+    end
+
+end)
+
 ChallengesFolder:AddButton("Watch Your Step", function()
 
     local ops = {}
