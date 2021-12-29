@@ -49,7 +49,7 @@ function findM()
         task.wait()
     until m ~= nil
 
-    return m
+    return m.DisplayName .. " (@" .. m.Name .. ")"
     -- bad
 
 end
@@ -70,7 +70,7 @@ function findS()
         task.wait()
     until m ~= nil
 
-    return m
+    return m.DisplayName .. " (@" .. m.Name .. ")"
 
     -- bad
 
@@ -89,14 +89,14 @@ MainFolder:AddSwitch("Display Names", function(bool)
 
 end)
 
-MurderLabel.Text = ("Murderer: " .. findM().Name)
-SherrifLabel.Text = ("Sherrif: " .. findS().Name)
+MurderLabel.Text = ("Murderer: " .. findM())
+SherrifLabel.Text = ("Sherrif: " .. findS())
 
 game.ReplicatedStorage.RoleSelect.OnClientEvent:Connect(function()
     
     -- game started
-    MurderLabel.Text = ("Murderer: " .. findM().Name)
-    SherrifLabel.Text = ("Sherrif: " .. findS().Name)
+    MurderLabel.Text = ("Murderer: " .. findM())
+    SherrifLabel.Text = ("Sherrif: " .. findS())
 
 
 end)
