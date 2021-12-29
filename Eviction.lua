@@ -115,6 +115,40 @@ ChallengesFolder:AddButton("Power Outage (collect item)", function()
 
 end)
 
+ChallengesFolder:AddButton("Buzz In", function()
+
+    local count = {
+
+    }
+
+    for _,v in ipairs(workspace.House['Buzz In'].Misc) do
+
+        if not count[v.Name] then
+
+            count[v.Name] = 0
+
+        end
+
+        count[v.Name] = count[v.Name] + 1
+
+    end
+
+    local highest = ""
+    local highesti = 0
+
+    for n, count in pairs(count) do
+
+        if count > highesti then
+            highesti = count
+            highest = n
+        end
+
+    end
+
+    ChallengesFolder:AddLabel(n)
+    
+end)
+
 MiscFolder:AddButton("Freeze/Unfreeze character", function()
 
     game.Players.LocalPlayer.Character.PrimaryPart.Anchored = not game.Players.LocalPlayer.Character.PrimaryPart.Anchored
