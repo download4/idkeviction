@@ -7,6 +7,6 @@ end
 
 local UiLibrary = loadstring(getFile("UILib.lua"))()
 
-local MainWindow = UiLibrary:AddWindow("Eviction Notice")
+local MainWindow = UiLibrary:AddWindow("Murder Mystery")
 local MainFolder = MainWindow:AddTab("Main")
-local MiscFolder = MainWindow:AddTab("MiscFolder")
+local MiscFolder = MainWindow:AddTab("Misc")
