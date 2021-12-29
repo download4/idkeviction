@@ -145,7 +145,7 @@ ChallengesFolder:AddButton("Buzz In", function()
 
     end
 
-    ChallengesFolder:AddLabel(n)
+    ChallengesFolder:AddLabel(highest)
     
 end)
 
