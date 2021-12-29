@@ -31,8 +31,8 @@ end)
 ChallengesFolder:AddButton("Tile Trekkers", function()
     for i = 1, 120 * 2 do
         for _,v in ipairs(workspace.House['Tile Trekkers'].Tiles:GetChildren()) do
-            firetouchinterest(v, game.Players.LocalPlayer.PrimaryPart, 0)
-            firetouchinterest(v, game.Players.LocalPlayer.PrimaryPart, 1)
+            firetouchinterest(v, game.Players.LocalPlayer.Character.PrimaryPart, 0)
+            firetouchinterest(v, game.Players.LocalPlayer.Character.PrimaryPart, 1)
         end
         task.wait(.5)
     end
