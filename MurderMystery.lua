@@ -57,6 +57,10 @@ function findS()
 
 end
 
+MurderLabel.Text = ("Murderer: " .. findM().Name)
+SherrifLabel.Text = ("Sherrif: " .. findS().Name)
+
+
 game.ReplicatedStorage.RoleSelect.OnClientEvent:Connect(function()
     
     -- game started
