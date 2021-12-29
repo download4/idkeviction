@@ -76,9 +76,36 @@ ChallengesFolder:AddButton("Shape Shifters", function()
 
 end)
 
-MiscFolder:AddButton("Crash Challenge", function()
+ChallengesFolder:AddButton("Clubbing", function()
+
+    workspace.House.Clubbing.Walls:ClearAllChildren()
+
+end)
+
+MiscFolder:AddButton("Random Winner", function()
     local ChosenEvent = game.ReplicatedStorage.Comps:GetChildren()[math.random(1,#game.ReplicatedStorage.Comps:GetChildren())]
     for i = 1, 400 do
         ChosenEvent:FireServer()
     end
+end)
+
+MiscFolder:AddButton("Memorabilia", function()
+
+    local NewTab = MainWindow:AddTab("temporary")
+    NewTab:Show()
+
+    for _, v in ipairs(workspace.House.Memorabilia.Picture:GetChildren()) do
+        v.Changed:Connect(function()
+            if v.Transparency ~= .99 then
+                NewTab:AddLabel(v.Name)
+            end
+        end)
+    end 
+
+end)
+
+MiscFolder:AddButton("Freeze/Unfreeze character", function()
+
+    game.Players.LocalPlayer.Character.PrimaryPart.Anchored = not game.Players.LocalPlayer.Character.PrimaryPart.Anchored
+
 end)
