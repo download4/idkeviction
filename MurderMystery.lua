@@ -76,18 +76,18 @@ function findS()
 
 end
 
-MurderLabel.Text = ("Murderer: " .. findM().Name)
-SherrifLabel.Text = ("Sherrif: " .. findS().Name)
-
 MainFolder:AddSwitch("Display Names", function(bool)
 
     nameDisplayDistance = bool and 100 or 0
     for _,v in ipairs(game.Players:GetPlayers()) do
         local char = v.Character or v.CharacterAdded:Wait()
-        char:WaitForChild("Humaoid").NameDisplayDistance = nameDisplayDistance
+        char:WaitForChild("Humanoid").NameDisplayDistance = nameDisplayDistance
     end
 
 end)
+
+MurderLabel.Text = ("Murderer: " .. findM().Name)
+SherrifLabel.Text = ("Sherrif: " .. findS().Name)
 
 game.ReplicatedStorage.RoleSelect.OnClientEvent:Connect(function()
     
