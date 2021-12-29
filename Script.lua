@@ -64,6 +64,18 @@ ChallengesFolder:AddButton("Watch Your Step", function()
     end
 end)
 
+ChallengesFolder:AddButton("Shape Shifters", function()
+
+    local stuff = {"Circle", "Triangle", "Hexagon", "Square", "Star"}
+    for _, thing in ipairs(stuff) do
+
+        local found = workspace.House["Shape Shifters"].SpawnedItems:WaitForChild(thing)
+        fireclickdetector(found:WaitForChild("ClickDetector"))
+
+    end
+
+end)
+
 MiscFolder:AddButton("Crash Challenge", function()
     local ChosenEvent = game.ReplicatedStorage.Comps:GetChildren()[math.random(1,#game.ReplicatedStorage.Comps:GetChildren())]
     for i = 1, 400 do
