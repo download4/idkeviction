@@ -104,6 +104,17 @@ ChallengesFolder:AddButton("Memorabilia", function()
 
 end)
 
+ChallengesFolder:AddButton("Power Outage (collect item)", function()
+
+    for _,v in ipairs(game.Workspace:GetDescendants()) do
+        if v:IsA("TouchTransmitter") then
+            firetouchinterest(v.Parent, game.Players.LocalPlayer.Character.PrimaryPart, 1) 
+            firetouchinterest(v.Parent, game.Players.LocalPlayer.Character.PrimaryPart, 0) 
+        end
+    end
+
+end)
+
 MiscFolder:AddButton("Freeze/Unfreeze character", function()
 
     game.Players.LocalPlayer.Character.PrimaryPart.Anchored = not game.Players.LocalPlayer.Character.PrimaryPart.Anchored
