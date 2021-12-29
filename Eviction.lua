@@ -149,7 +149,7 @@ ChallengesFolder:AddButton("Buzz In", function()
 
     }
 
-    for _,v in ipairs(workspace.House['Buzz In'].Misc) do
+    for _,v in ipairs(workspace.House['BuzzIn'].Misc) do
 
         if not count[v.Name] then
 
