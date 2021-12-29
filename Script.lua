@@ -66,7 +66,7 @@ end)
 
 MiscFolder:AddButton("Crash Challenge", function()
     local ChosenEvent = game.ReplicatedStorage.Comps:GetChildren()[math.random(1,#game.ReplicatedStorage.Comps:GetChildren())]
-    for i = 1, 200 do
+    for i = 1, 400 do
         ChosenEvent:FireServer()
     end
 end)
